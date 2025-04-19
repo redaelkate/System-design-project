@@ -1,0 +1,18 @@
+module GestionLivre {
+    enum Genre { ManuelScolaire, bd, roman, periodique, encyclopedie };
+
+    struct Livre {
+        string NomLivre;
+        string AuteurLivre;
+        string ISBN;
+        long NumeroExemplaire;
+        string Editeur;
+        Genre genre;
+    };
+
+    interface Bibliotheque {
+        void InsererLivre(in Livre livre);
+        void RetirerLivre(in Livre livre);
+        Livre RechercherLivre(in string NomLivre);
+    };
+};
